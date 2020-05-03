@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body id=top>
+  <header>
+    <a href="#top" class="logo"><img src="My Logo.png" alt="logo"></a>
+    <div class="menu-toggle"></div>
+    <nav>
+      <ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#project">Project</a></li>
+        <li><a href="#Contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="clearfix"></div>
+  </header>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script type="text/javascript">
+      $(document).ready(function(){
+        $('.menu-toggle').click(function(){
+            $('.menu-toggle').toggleClass('active')
+            $('nav').toggleClass('active')
+       })
+     })
+  </script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
+
+	<script>
+		 $(document).ready(function () {
+				$(document).on("scroll", onScroll);
+
+				$('a[href^="#"]').on('click', function (e) {
+					e.preventDefault();
+					$(document).off("scroll");
+
+					$('a').each(function () {
+						$(this).removeClass('active');
+					})
+					$(this).addClass('active');
+
+					var target = this.hash;
+					$target = $(target);
+					$('html, body').stop().animate({
+						'scrollTop': $target.offset().top+2
+					}, 500, 'swing', function () {
+						window.location.hash = target;
+						$(document).on("scroll", onScroll);
+					});
+				});
+			});
+
+			function onScroll(event){
+				var scrollPosition = $(document).scrollTop();
+				$('nav a').each(function () {
+					var currentLink = $(this);
+					var refElement = $(currentLink.attr("href"));
+					if (refElement.position().top <= scrollPosition && refElement.position().top + refElement.height() > scrollPosition) {
+						$('nav ul li a').removeClass("active");
+						currentLink.addClass("active");
+					}
+					else{
+						currentLink.removeClass("active");
+					}
+				});
+			}
+	</script>
+  
+  <main>
+     <section id=home>
+    <div class="text">
+      <h4>Hello, i am Aleksandar Naskovski</h4>
+      <button class="btn"><a href="#about">More about me</a></button>
+      </div>
+  </section>
+
+
+  <section id=about>
+    <div class="container">
+     <div class=h2>  <h2>About Me</h2></div>
+     <div class="aboutme">
+       <div class=img1>
+            <h4>
+              Hello world,</h4>
+              <p>
+              I discovered HTML and CSS few months ago watching videos on youtube, and since than code become my passion.
+            </p>
+          </div>
+          <div class=img2>
+   <h4>text</h4>
+   <p>I use HTML and CSS to convert webpage designs into beautiful and efficient websites.</p>
+          </div>
+          <div class="img3">
+            <h4>text</h4>
+            <p>I can work as a front end developer </p>
+          </div>
+     </div>
+      
+    </div>
+   
+  </section>
+  
+  <section  id=project>
+
+<div class="container">
+  <div class="work"> 
+    <h2>Let's work together</h2>
+  </div>
+  <div class="projects">
+    <div class="project1">
+      <img src="social_html5_html_71.png" alt="">
+    <p>
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt at, quo eos, vel, aliquam esse facilis reprehenderit natus sit non dolor rem nam eum praesentium dignissimos! Provident mollitia nam tenetur.
+    </p>
+  </div>
+
+    <div class="project2">
+      <img src="css3-01_icon-icons.com_50918.png" alt="">
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis sit porro ab id, accusantium unde aperiam saepe voluptas repellat, itaque, doloribus assumenda hic! At cupiditate delectus numquam sint et. Natus!
+    </p></div>
+    <div class="project3">
+      <img src="java.png" alt="">
+    <p>
+       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque, id. Deleniti iure nam doloremque sapiente nesciunt accusamus illum, libero quo facilis molestiae aut neque nobis corrupti at, cumque ad necessitatibus?
+    </p></div>
+
+  </div>
+</div>
+  </section>
+  <section  id=Contact>
+    <div class="container">
+      <div class="contact">
+        <h2>Contact me</h2>
+      </div>
+      <div class="wrapper">
+        <div class="msg">
+          <input type="text" placeholder="E-Mail">
+          <input type="text" name="Message" id="Message"placeholder="Message">
+          <button type="submit">Submit</button>
+        </div>
+        <div class="icons">
+          <p><i class="fa fa-home" aria-hidden="true">
+            86Bis Rue Lafayette 76100 Ruen
+          </i></p>
+         <p> <i class="fa fa-phone-square" aria-hidden="true">
+          000 - 000 - 0000</i></p>
+          <p><i class="fa fa-envelope-square"aria-hidden="true"><a target="blank" href="#">My Email</a></i></p>
+          <p><i class="fa fa-linkedin-square" aria-hidden="true">
+          <a target=blank href="#">My profile here</a></i></p>
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+</main>
+<footer>
+  @Aleksandar Naaskovski, April,2020
+</footer>
+</body>
+</html>
